@@ -11,7 +11,7 @@ import pyfits
 def read_fits(name):
     datacube=pyfits.open(name)
     data=image[1].data
-    err=image[2].data
+    err=image[2].data*5. +2
     L0=hdulist[0].header['LAMBDA0'] 
     DL=hdulist[0].header['DLAMBDA'] 
     N1=hdulist[0].header['NAXIS1'] 
